@@ -1,0 +1,65 @@
+
+PM> Install-Package Microsoft.Web.Infrastructure -Version 1.0.0
+
+
+Step 1 : Get Token
+http://localhost:25419/api/Token
+Authorization: Basic RGF2b2xpbzpOYW5jeQ==       //Davolio:Nancy     2
+Authorization: Basic RG9kc3dvcnRoOkFubmU=       //Dodsworth:Anne    5
+Authorization: Basic dXNlcjpwYXNz               //user:pass         Not exist
+
+LastName             FirstName  base64                   decoded           reportsto
+-------------------- ---------- ------------------------ -----------------------------
+Davolio              Nancy      RGF2b2xpbzpOYW5jeQ==     Davolio:Nancy     2
+Fuller               Andrew     RnVsbGVyOkFuZHJldw==     Fuller:Andrew     1
+Leverling            Janet      TGV2ZXJsaW5nOkphbmV0     Leverling:Janet   2
+Peacock              Margaret   UGVhY29jazpNYXJnYXJldA== Peacock:Margaret  2
+Buchanan             Steven     QnVjaGFuYW46U3RldmVu     Buchanan:Steven   1
+Suyama               Michael    U3V5YW1hOk1pY2hhZWw=     Suyama:Michael    5
+King                 Robert     S2luZzpSb2JlcnQ=         King:Robert       5
+Callahan             Laura      Q2FsbGFoYW46TGF1cmE=     Callahan:Laura    3
+Dodsworth            Anne       RG9kc3dvcnRoOkFubmU=     Dodsworth:Anne    5
+user                 pass       dXNlcjpwYXNz             user:pass         Not exist
+(9 row(s) affected)
+
+Step 2:
+http://localhost:25419/api/data/forall
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkRhdm9saW8iLCJuYmYiOjE1MDA4NTI0NjQsImV4cCI6MTUwMDg1MzY2NCwiaWF0IjoxNTAwODUyNDY0fQ.uAh18ZGMybcvl2BZQN_caxkT54K2T0PsTPksmoVWOI0
+HTTP/1.1 200 OK
+"Now server time is: 7/23/2017 4:29:59 PM"
+
+
+Step 3: authenticate
+http://localhost:25419/api/data/authenticate
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkRhdm9saW8iLCJyb2xlIjoibXlSb2xlIiwibmJmIjoxNTAwODc2OTIyLCJleHAiOjE1MDA4Nzg3MDYsImlhdCI6MTUwMDg3NjkyMn0.CuVIzqjiGczCSpkvW-BdQiVtX-AxOK84NFk72ia9nx8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkRvZHN3b3J0aCIsInJvbGUiOiJ2aXNpdG9yIiwibmJmIjoxNTAwODc4NTE5LCJleHAiOjE1MDA4ODAzMTksImlhdCI6MTUwMDg3ODUxOX0.saNvoBbPgXpkmQN6Fcoh4ZkhsmvH1VO8dSECNlmUJF8
+
+--> IDX10223: Lifetime validation failed. The token is expired.
+--> Current Time is always utc
+
+
+Step 4: authorize(Roles = "myRole")
+http://localhost:25419/api/data/authorize
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkRhdm9saW8iLCJyb2xlIjoibXlSb2xlIiwibmJmIjoxNTAwODc2OTIyLCJleHAiOjE1MDA4Nzg3MDYsImlhdCI6MTUwMDg3NjkyMn0.CuVIzqjiGczCSpkvW-BdQiVtX-AxOK84NFk72ia9nx8
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IkRvZHN3b3J0aCIsInJvbGUiOiJ2aXNpdG9yIiwibmJmIjoxNTAwODc4NTE5LCJleHAiOjE1MDA4ODAzMTksImlhdCI6MTUwMDg3ODUxOX0.saNvoBbPgXpkmQN6Fcoh4ZkhsmvH1VO8dSECNlmUJF8
+
+
+==============
+var identity = (ClaimsIdentity)HttpContext.Current.User.Identity;
+var usernameClaim = identity.FindFirst(ClaimTypes.Name);
+username = usernameClaim == null ? "" : usernameClaim.Value;
+var principal = await AuthenticateJwtToken(token);
+
+
+==============
+var roles = ((ClaimsIdentity)User.Identity).Claims
+                .Where(c => c.Type == ClaimTypes.Role)
+                .Select(c => c.Value);
+using System.Security.Claims;
+// ........
+var userIdentity = (ClaimsIdentity)User.Identity;
+var claims = userIdentity.Claims;
+var roleClaimType = userIdentity.RoleClaimType;
+var roles = claims.Where(c => c.Type == ClaimTypes.Role).ToList();
+// or...
+var roles = claims.Where(c => c.Type == roleClaimType).ToList();                
