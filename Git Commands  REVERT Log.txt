@@ -1,0 +1,190 @@
+
+Admin@HOST MINGW64 /r/BL_WebApi2_JWT (master)
+$ git status
+On branch master
+Your branch is up to date with 'BL_WebApi2_JWT/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   BL_WebApi2_JWT/App_Start/WebApiConfig.cs
+        modified:   BL_WebApi2_JWT/BL_WebApi2_JWT.csproj
+        modified:   BL_WebApi2_JWT/Web.config
+        modified:   BL_WebApi2_JWT/bin/BL_WebApi2_JWT.dll
+        modified:   BL_WebApi2_JWT/bin/BL_WebApi2_JWT.dll.config
+        modified:   BL_WebApi2_JWT/bin/BL_WebApi2_JWT.pdb
+        modified:   BL_WebApi2_JWT/bin/System.Net.Http.Formatting.dll
+        modified:   BL_WebApi2_JWT/bin/System.Net.Http.Formatting.xml
+        modified:   BL_WebApi2_JWT/bin/System.Web.Http.WebHost.dll
+        modified:   BL_WebApi2_JWT/bin/System.Web.Http.WebHost.xml
+        modified:   BL_WebApi2_JWT/bin/System.Web.Http.dll
+        modified:   BL_WebApi2_JWT/bin/System.Web.Http.xml
+        modified:   BL_WebApi2_JWT/packages.config
+        modified:   TEST.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vs/
+        BL_WebApi2_JWT/VS2015.txt
+        BL_WebApi2_JWT/obj/
+        packages/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@HOST MINGW64 /r/BL_WebApi2_JWT (master)
+$ git add BL_WebApi2_JWT
+warning: LF will be replaced by CRLF in BL_WebApi2_JWT/App_Start/WebApiConfig.cs.
+The file will have its original line endings in your working directory
+
+Admin@HOST MINGW64 /r/BL_WebApi2_JWT (master)
+$ git status
+On branch master
+Your branch is up to date with 'BL_WebApi2_JWT/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   BL_WebApi2_JWT/App_Start/WebApiConfig.cs
+        modified:   BL_WebApi2_JWT/BL_WebApi2_JWT.csproj
+        new file:   BL_WebApi2_JWT/VS2015.txt
+        modified:   BL_WebApi2_JWT/Web.config
+        modified:   BL_WebApi2_JWT/bin/BL_WebApi2_JWT.dll
+        modified:   BL_WebApi2_JWT/bin/BL_WebApi2_JWT.dll.config
+        modified:   BL_WebApi2_JWT/bin/BL_WebApi2_JWT.pdb
+        modified:   BL_WebApi2_JWT/bin/System.Net.Http.Formatting.dll
+        modified:   BL_WebApi2_JWT/bin/System.Net.Http.Formatting.xml
+        modified:   BL_WebApi2_JWT/bin/System.Web.Http.WebHost.dll
+        modified:   BL_WebApi2_JWT/bin/System.Web.Http.WebHost.xml
+        modified:   BL_WebApi2_JWT/bin/System.Web.Http.dll
+        modified:   BL_WebApi2_JWT/bin/System.Web.Http.xml
+        new file:   BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.csproj.FileListAbsolute.txt
+        new file:   BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.csprojResolveAssemblyReference.cache
+        new file:   BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.dll
+        new file:   BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.pdb
+        new file:   BL_WebApi2_JWT/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+        new file:   BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+        new file:   BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+        new file:   BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+        modified:   BL_WebApi2_JWT/packages.config
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TEST.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vs/
+        packages/
+
+
+Admin@HOST MINGW64 /r/BL_WebApi2_JWT (master)
+$ git commit BL_WebApi2_JWT
+warning: LF will be replaced by CRLF in BL_WebApi2_JWT/App_Start/WebApiConfig.cs.
+The file will have its original line endings in your working directory
+[master 9caa07f]  Changes to be committed:
+ 22 files changed, 1299 insertions(+), 160 deletions(-)
+ create mode 100644 BL_WebApi2_JWT/VS2015.txt
+ rewrite BL_WebApi2_JWT/bin/BL_WebApi2_JWT.dll (95%)
+ rewrite BL_WebApi2_JWT/bin/BL_WebApi2_JWT.pdb (62%)
+ rewrite BL_WebApi2_JWT/bin/System.Net.Http.Formatting.dll (96%)
+ rewrite BL_WebApi2_JWT/bin/System.Web.Http.WebHost.dll (96%)
+ rewrite BL_WebApi2_JWT/bin/System.Web.Http.dll (92%)
+ create mode 100644 BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.csproj.FileListAbsolute.txt
+ create mode 100644 BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.csprojResolveAssemblyReference.cache
+ create mode 100644 BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.dll
+ create mode 100644 BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.pdb
+ create mode 100644 BL_WebApi2_JWT/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+ create mode 100644 BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+ create mode 100644 BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+ create mode 100644 BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+
+Admin@HOST MINGW64 /r/BL_WebApi2_JWT (master)
+$ git log
+commit 9caa07f2246d5efc6f386f2e93634dd8f12c6d43 (HEAD -> master)
+Author: choonkeun <choonkeun@yahoo.com>
+Date:   Sun Sep 27 23:05:45 2020 -0700
+
+     Changes to be committed:
+
+commit 0f7b7f9c4ead6ac326a047393fb20f38658598ac (BL_WebApi2_JWT/master)
+Author: choonkeun <choonkeun@yahoo.com>
+Date:   Sat Sep 26 23:59:25 2020 -0700
+
+    1st commit by Git
+
+commit dc1b155419827c5ea2fa444012a6cab423ea0333
+Author: choonkeun <choonkeun@yahoo.com>
+Date:   Sat Sep 26 23:24:11 2020 -0700
+
+    Delete
+
+commit 4f8706dffd0d62b1020ac26c836c632004bea179
+Author: choonkeun <choonkeun@yahoo.com>
+Date:   Sat Sep 26 00:01:57 2020 -0700
+
+    Update File
+
+commit 17dfa8f2ac54a5beb938ecece112f5535cf5ee75
+Author: choonkeun <choonkeun@yahoo.com>
+Date:   Mon Jul 24 21:14:47 2017 -0700
+
+    1st Upload
+
+commit 7bdd6d8221ae2c839a5652ecd2c9a6349701c2bb
+Author: choonkeun <choonkeun@yahoo.com>
+Date:   Mon Jul 24 21:13:45 2017 -0700
+
+    Initial commit
+
+Admin@HOST MINGW64 /r/BL_WebApi2_JWT (master)
+$ git checkout 9caa07f2 BL_WebApi2_JWT
+Updated 0 paths from 19a1419
+
+Admin@HOST MINGW64 /r/BL_WebApi2_JWT (master)
+$
+
+Admin@HOST MINGW64 /r/BL_WebApi2_JWT (master)
+$ git revert  b048466e
+Removing BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+Removing BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+Removing BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+Removing BL_WebApi2_JWT/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Removing BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.pdb
+Removing BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.dll
+Removing BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.csproj.FileListAbsolute.txt
+[master 4424e87] Revert " Changes to be committed:"
+ 20 files changed, 160 insertions(+), 1296 deletions(-)
+ rewrite BL_WebApi2_JWT/bin/BL_WebApi2_JWT.dll (94%)
+ rewrite BL_WebApi2_JWT/bin/BL_WebApi2_JWT.pdb (68%)
+ rewrite BL_WebApi2_JWT/bin/System.Net.Http.Formatting.dll (95%)
+ rewrite BL_WebApi2_JWT/bin/System.Web.Http.WebHost.dll (96%)
+ rewrite BL_WebApi2_JWT/bin/System.Web.Http.dll (92%)
+ delete mode 100644 BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.csproj.FileListAbsolute.txt
+ delete mode 100644 BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.dll
+ delete mode 100644 BL_WebApi2_JWT/obj/Debug/BL_WebApi2_JWT.pdb
+ delete mode 100644 BL_WebApi2_JWT/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+ delete mode 100644 BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+ delete mode 100644 BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+ delete mode 100644 BL_WebApi2_JWT/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+
+Admin@HOST MINGW64 /r/BL_WebApi2_JWT (master)
+$ git status
+On branch master
+Your branch is ahead of 'BL_WebApi2_JWT/master' by 4 commits.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   TEST.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .vs/
+        packages/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Admin@HOST MINGW64 /r/BL_WebApi2_JWT (master)
+$
+

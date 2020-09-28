@@ -1,4 +1,5 @@
 
+PM> Install-Package Microsoft.AspNet.WebApi.WebHost
 PM> Install-Package Microsoft.Web.Infrastructure -Version 1.0.0
 
 
